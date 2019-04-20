@@ -4,5 +4,9 @@ Projeto para iniciar com as principais tecnologias utilizadas na web.
 
 ### Sobre
 
-A ideia é basicamente criar uma lista de tarefas onde será possível realizar as operações básicas de um crud *adicionar*, *editar* e *excluir* uma tarefa.
+A ideia é basicamente criar uma lista de tarefas onde será possível realizar as operações básicas de um crud _adicionar_, _editar_ e _excluir_ uma tarefa.
 
+### O que foi feito até o momento
+
+1. Parte visual - HTML + CSS
+2. Função de adicionar itens na lista - JavaScript

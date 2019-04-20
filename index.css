@@ -1,21 +1,22 @@
 @font-face {
-    font-family: ice;
-    src: url('IceValley.otf');
+  font-family: ice;
+  src: url("IceValley.otf");
 }
-html,body{
-    background-color:rgb(24,24,31);
-    width: 99%;
-    height: 99%;
+html,
+body {
+  background-color: rgb(24, 24, 31);
+  width: 99%;
+  height: 99%;
 }
-.fundo{
-    background-color:rgb(24,24,31);
-    width: 99%;
-    height: 80%;
-    position: relative;
-    display: flex;
-    flex-direction: column;
+.fundo {
+  background-color: rgb(24, 24, 31);
+  width: 99%;
+  height: 80%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
 }
-.central{
+.central {
   margin: auto;
   width: 50%;
   height: 80%;
@@ -24,31 +25,31 @@ html,body{
   text-align: center;
   position: relative;
 }
-.central h1{
-    color: azure;
-    font-family: ice;
-    font-size: 500%;
+.central h1 {
+  color: azure;
+  font-family: ice;
+  font-size: 500%;
 }
 
-.esquerda{
-    bottom: 0;
-    float: right;
+.esquerda {
+  bottom: 0;
+  float: right;
 }
-.tasks{
-    position: relative;
-    font-family: ice;
-    font-size: 200%;
-    text-align: center;
-    border-radius: 3%;
+.tasks {
+  position: relative;
+  font-family: ice;
+  font-size: 200%;
+  text-align: center;
+  border-radius: 3%;
 }
-#taskList{
-    background-color: slategray;
-    border-radius: 4%;
-    color: aliceblue;
+#taskList {
+  background-color: slategray;
+  border-radius: 4%;
+  color: aliceblue;
 }
-.cheka{
-    float: right;
-	width: 17px;
-	height: 17px;
-	border-radius: 5%;
+.cheka {
+  float: right;
+  width: 17px;
+  height: 17px;
+  border-radius: 5%;
 }
