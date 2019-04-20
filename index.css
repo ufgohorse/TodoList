@@ -1,0 +1,29 @@
+@font-face {
+    font-family: ice;
+    src: url('IceValley.otf');
+}
+.fundo{
+    background-color:rgb(24,24,31);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+}
+.central{
+  margin: auto;
+  width: 50%;
+  height: 80%;
+  background: rgb(25, 25, 32);
+  padding: 10px;
+  text-align: center;
+}
+.central h1{
+    color: azure;
+    font-family: ice;
+    font-size: 500%;
+}
+
+.esquerda{
+    float: right;
+}
