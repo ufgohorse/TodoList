@@ -1,11 +1,14 @@
 var id = 0;
+var empty = 1;
 const listaTodos = [];
 const input = document.querySelector("#item");
 
 //funcao executada ao clicar no botao
 function adicionarTodo() {
   verificarInputVazio();
-  adicionarItemLista();
+  if(empty == 0){
+    adicionarItemLista();
+  }
   limparInput();
 }
 
@@ -16,7 +19,10 @@ function verificarInputVazio() {
     input.value == null ||
     input.value.length < 1
   ) {
+    empty = 1;
     return alert("Ops, você não descreveu a tarefa!");
+  } else {
+    empty = 0;
   }
 }
 
@@ -25,7 +31,7 @@ function adicionarItemLista() {
   //pega o elemento no html onde a lista será mostrada
   let lista = document.querySelector("#taskList");
   //'constroi' o elemento com o valor do input
-  let itemLista = `<li class="t${id} list-group-item" id="taskList">${
+  let itemLista = `<li class="t${id} list-group-item" id="task">${
     input.value
   }</li>`;
   lista.insertAdjacentHTML("beforeend", itemLista);
