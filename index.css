@@ -1,3 +1,17 @@
+/* css reset */
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+body {
+    font-family: "Open Sans", sans-serif;
+}
+    ul, ol, li {
+        list-style: none;
+    }
+/* fim do css reset */
+
 @font-face {
   font-family: ice;
   src: url("IceValley.otf");
@@ -35,6 +49,7 @@ body {
   bottom: 0;
   float: right;
 }
+
 .tasks {
   position: relative;
   font-family: ice;
@@ -44,20 +59,32 @@ body {
 }
 
 #task {
+  position: relative;
   background-color: slategray;
   border-radius: 0.8em;
+  width: 79%;
+  -ms-word-break: break-all;
+     word-break: break-all;
+  float: left;
 }
 
 #taskList {
+  position: relative;
   background-color: rgb(24, 24, 31);
   border-radius: 0.8em;
+  padding: 1  0% 0%;
+  width: 100%;
   color: aliceblue;
-}
-.cheka {
-  float: right;
-  width: 17px;
-  height: 17px;
-  border-radius: 5%;
+  display: inline-block;
 }
 
+#cheka {
+  position: relative;
+  vertical-align: middle;
+  float: left;
+  border-radius: 50%;
+}
 
+#cheka:focus {
+  outline:0;
+}
