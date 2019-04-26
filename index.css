@@ -46,6 +46,9 @@ body {
 #task {
   background-color: slategray;
   border-radius: 0.8em;
+  /* quebra de linha para palavras grandes */
+  -ms-word-break: break-all;
+    word-break: break-all;
 }
 
 #taskList {

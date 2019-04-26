@@ -3,6 +3,14 @@ var empty = 1;
 const listaTodos = [];
 const input = document.querySelector("#item");
 
+//funcao executada ao dar enter com input ativo
+function keyEvent(){
+  key = event.which || event.keyCode;
+  if(key == 13){
+    adicionarTodo();
+  }
+}
+
 //funcao executada ao clicar no botao
 function adicionarTodo() {
   verificarInputVazio();
