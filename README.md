@@ -10,4 +10,5 @@ A ideia é basicamente criar uma lista de tarefas onde será possível realizar 
 
 1. Parte visual - HTML + CSS
 2. Função de adicionar itens na lista - JavaScript
-3. Função de limpar input e quebrar linha - JavaScript
+3. Função de limpar input e quebrar linha - JavaScript + CSS
+4. Função de riscar texto ao marcar checkbox + css checkbox - JavaScript + CSS
