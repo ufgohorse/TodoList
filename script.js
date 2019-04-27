@@ -23,6 +23,8 @@
 var id = 0;
 var empty = 1;
 const listaTodos = [];
+var lista = document.querySelector("#taskList");
+lista.addEventListener("click", checkar)
 const input = document.querySelector("#item");
 
 //funcao executada ao dar enter com input ativo
@@ -59,11 +61,8 @@ function verificarInputVazio() {
 //adiciona o item na lista tanto no html, quanto no array de items da lista
 function adicionarItemLista() {
   //pega o elemento no html onde a lista será mostrada
-  let lista = document.querySelector("#taskList");
   //'constroi' o elemento com o valor do input
-  let itemLista = `<li class="t${id} list-group-item" id="task">${
-    input.value
-  }</li>`;
+  let itemLista = `<li class="t${id} list-group-item" id="task">${input.value} <input id="box-${id}" class="checkboxes" type="checkbox"></li>`;
   lista.insertAdjacentHTML("beforeend", itemLista);
   //atualiza o id do item da lista
   id++;
@@ -74,4 +73,18 @@ function adicionarItemLista() {
 //limpa o input após adicionarmos um item
 function limparInput() {
   return (input.value = null);
+}
+
+function checkar(event) {
+  const element = event.target;
+  if(element.type === "checkbox") {
+    if(element.checked){
+      element.parentNode.style.textDecoration = "line-through";
+    }else{
+      element.parentNode.style.textDecoration = "none";
+    }
+   
+  }
+  console.log(element)
+  console.log(element.checked)
 }
