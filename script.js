@@ -80,8 +80,10 @@ function checkar(event) {
   if(element.type === "checkbox") {
     if(element.checked){
       element.parentNode.style.textDecoration = "line-through";
+      element.parentNode.style.backgroundColor = "rgb(112, 170, 144)";
     }else{
       element.parentNode.style.textDecoration = "none";
+      element.parentNode.style.backgroundColor = "slategray";
     }
    
   }
