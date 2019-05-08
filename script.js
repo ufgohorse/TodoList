@@ -20,12 +20,35 @@
  *  THE SOFTWARE.
  */
 
+
 var id = 0;
 var empty = 1;
-const listaTodos = [];
+var listaTodos = [];
+var ListaTodosBD = "";
 var lista = document.querySelector("#taskList");
 lista.addEventListener("click", checkar)
 const input = document.querySelector("#item");
+
+window.onload = function() {
+  listaTodos = JSON.parse(localStorage.getItem("todoList"));
+  listaTodos.forEach(function(element) {
+    console.log(element.todo)
+    var item = `<li class = "list-group-item task" id="li-${id}">${element.todo}<input id="box-${id}" class="checkboxes" type="checkbox"></li>`;
+    lista.insertAdjacentHTML("beforeend", item);
+    //if we got a checked box, then style
+    if(element.marcado) {
+      var li = document.getElementById("li-"+id);
+      li.style.textDecoration = "line-through";
+      li.style.backgroundColor = "rgb(112, 170, 144)";
+      li.childNodes[1].checked = true;
+    }else{
+      var li = document.getElementById("li-"+id);
+      li.parentNode.style.textDecoration = "none";
+      li.style.backgroundColor = "slategray";
+    }
+    id++;
+  }); 
+}
 
 //funcao executada ao dar enter com input ativo
 function keyEvent(){
@@ -62,12 +85,14 @@ function verificarInputVazio() {
 function adicionarItemLista() {
   //pega o elemento no html onde a lista será mostrada
   //'constroi' o elemento com o valor do input
-  let itemLista = `<li class="t${id} list-group-item" id="task">${input.value} <input id="box-${id}" class="checkboxes" type="checkbox"></li>`;
+  let itemLista = `<li class="list-group-item task" id="li-${id}">${input.value} <input id="-${id}" class="checkboxes" type="checkbox"></li>`;
   lista.insertAdjacentHTML("beforeend", itemLista);
   //atualiza o id do item da lista
   id++;
   //adiciona item no array
-  listaTodos.push(input.value);
+  ListaTodosBD = {todo: input.value, marcado:false};
+  listaTodos.push(ListaTodosBD);
+  addToLocalStorage()
 }
 
 //limpa o input após adicionarmos um item
@@ -78,15 +103,29 @@ function limparInput() {
 function checkar(event) {
   const element = event.target;
   if(element.type === "checkbox") {
-    if(element.checked){
+    listaTodos = JSON.parse(localStorage.getItem("todoList"));
+    console.log(listaTodos[element.id.split('-')[1]].marcado)
+    if(!(listaTodos[element.id.split('-')[1]].marcado)){
       element.parentNode.style.textDecoration = "line-through";
       element.parentNode.style.backgroundColor = "rgb(112, 170, 144)";
+      listaTodos[element.id.split('-')[1]].marcado = true;
+      addToLocalStorage()
     }else{
       element.parentNode.style.textDecoration = "none";
       element.parentNode.style.backgroundColor = "slategray";
+      listaTodos[element.id.split('-')[1]].marcado = false;
+      addToLocalStorage()
     }
    
   }
   console.log(element)
-  console.log(element.checked)
+}
+
+function addToLocalStorage(){
+  if(typeof(Storage) !== "undefined") {
+    localStorage.setItem("todoList", JSON.stringify(listaTodos));
+  }
+  else {
+    alert("browser doesn't support local storage!");
+  }
 }
