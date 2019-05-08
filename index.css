@@ -65,7 +65,7 @@ body {
   border-radius: 3%;
 }
 
-#task {
+.task {
   background-color: slategray;
   border-radius: 0.8em;
   /* quebra de linha para palavras grandes */
